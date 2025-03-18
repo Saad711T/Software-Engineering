@@ -12,4 +12,7 @@ Projects as part of (Applied Software Engineering Fundamentals Specialization) &
 ## Mine projects
 Projects created by me from zero to completed versions .
 - [Database Connector](https://github.com/Saad711T/DatabaseConnector) **Python(Tkinter)**
-- [LibraryDB APP](https://github.com/Saad711T/LibraryAPP) **[HTML - CSS - JavaScript (Front End)] - [Python(Flask) - SQL (Back End)] -[Mobile App Java (Android) - Swift (iOS)]**
+- [LibraryDB APP](https://github.com/Saad711T/LibraryAPP) :
+1 - HTML - CSS - JavaScript [Front End]
+2 - Python(Flask) - SQL [Back End]
+3 - Mobile App Java [Android] - Swift [iOS].
