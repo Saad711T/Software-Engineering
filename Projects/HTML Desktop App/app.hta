@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>HTA Dashboard</title>
+  <HTA:APPLICATION 
+    ID="App"
+    APPLICATIONNAME="HTA Dashboard"
+    BORDER="thin"
+    BORDERSTYLE="normal"
+    CAPTION="yes"
+    SHOWINTASKBAR="yes"
+    SINGLEINSTANCE="yes"
+    SYSMENU="yes"
+    WINDOWSTATE="normal"
+  >
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    header {
+      background-color: #0066cc;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      background-color: #e6e6e6;
+      padding: 0.8rem;
+      font-weight: bold;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: #0066cc;
+      transition: color 0.3s;
+    }
+
+    .nav a:hover {
+      color: #003366;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    .btn {
+      background-color: #007bff;
+      color: white;
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .btn:hover {
+      background-color: #0056b3;
+    }
+
+    .output {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+    }
+
+    .dark-mode {
+      background-color: #1a1a1a;
+      color: #eee;
+    }
+
+    .dark-mode header {
+      background-color: #111;
+    }
+
+    .dark-mode .nav {
+      background-color: #333;
+    }
+
+    .dark-mode .nav a {
+      color: #ccc;
+    }
+
+    .dark-mode .nav a:hover {
+      color: white;
+    }
+
+    .dark-mode .btn {
+      background-color: #444;
+    }
+  </style>
+  <script language="VBScript">
+    Sub welcomeMessage
+      MsgBox "مرحبًا بك في لوحة تحكم HTA المتطورة!", vbInformation, "مرحبا"
+    End Sub
+
+    Sub showTime
+      Dim t
+      t = Time()
+      document.getElementById("timeOutput").innerText = "الوقت الحالي: " & t
+    End Sub
+  </script>
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle("dark-mode");
+    }
+  </script>
+</head>
+<body onload="welcomeMessage">
+  <header>
+    <h1>HTA Control panel</h1>
+    <p>HTML Application using HTML and VBScript</p>
+  </header>
+
+    <button class="btn" onclick="toggleDarkMode()">Night Mode</button>
+
+  <div class="container">
+    <button class="btn" onclick="showTime()">عرض الوقت</button>
+    <div class="output" id="timeOutput">الوقت سيظهر هنا</div>
+
+    <hr>
+
+    <h2>ملاحظات</h2>
+    <div id="notes" style="white-space: pre-wrap; background: #fafafa; padding: 1rem; border-radius: 8px; border: 1px solid #ddd;">
+	سيتحمل الملف...
+    </div>
+    <script>
+      // محاكاة تحميل ملف README.txt
+      fetch("https://raw.githubusercontent.com/Saad711T/0xSaad-Container/blog/README.md")
+        .then(res => res.text())
+        .then(data => document.getElementById("notes").innerText = data)
+        .catch(() => document.getElementById("notes").innerText = "فشل في تحميل الملف.");
+    </script>
+  </div>
+  <h3>Test</h3>
+  <img src="https://imageio.forbes.com/specials-images/imageserve/5d35eacaf1176b0008974b54/0x0.jpg?format=jpg&crop=4560,2565,x790,y784,safe&height=900&width=1600&fit=bounds" width=300px alt="image" />
+</body>
+</html>
